@@ -70,13 +70,12 @@
 
 // TASK 4
 
-// variant 1
+//variant 1
 // let cities = ["Rome", "Lviv", "Warsaw"];
-// let res = cities[0] + "*" + cities[1] + "*" + cities[2];
-// console.log(res);
+// console.log(cities.join('*'));
 
 
-// variant 2
+//variant 2
 // let cities = ["Rome", "Lviv", "Warsaw"];
 // let res = cities + "";
 // console.log(res.replace(/,/g,"*"));
@@ -97,7 +96,7 @@
 
 
 // TASK 6
-    // 6.1
+    
 
 // let a = prompt("Please enter a", "");
 // let b = prompt("Please enter b", "");
@@ -107,38 +106,22 @@
 // b = parseFloat(b);
 // c = parseFloat(c);
 // let P = a+b+c;
-// let S;
+// let S=Math.sqrt(( P*(P-2*a)*(P-2*b)*(P-2*c))/16);
 
 // if (isNaN(a) || isNaN(b) || isNaN(c)) {
 //     alert("input values should be ONLY numbers");  
 //      }else if ( a < 0 || b < 0 || c < 0 || a === 0 || b === 0 || c === 0){
 //       alert("Incorrect data");
 //        }else if (a + b < c || b + c < a || a + c < b){
-//          console.log('Triangle doesn�t exist');
+//          console.log("Triangle doesn�t exist");
+//         }else if (a*a === (b*b + c*c) || b*b === (a*a + c*c) || c*c === (a*a + b*b)){
+//           console.log(parseFloat(S.toFixed(3)));
+//           console.log("Right triangle");
 //           }else {
-//             S=Math.sqrt(( P*(P-2*a)*(P-2*b)*(P-2*c))/16);
 //             console.log(parseFloat(S.toFixed(3)));
+//             console.log("Not right triangle");
 //           }
 
-
-   // 6.2
-// let a = prompt("Please enter a", "");
-// let b = prompt("Please enter b", "");
-// let c = prompt("Please enter c", "");
-
-// a = parseFloat(a);
-// b = parseFloat(b);
-// c = parseFloat(c);
-
-// if (isNaN(a) || isNaN(b) || isNaN(c)) {
-//   alert("input values should be ONLY numbers");
-// } else if ( a < 0 || b < 0 || c < 0 || a === 0 || b === 0 || c === 0) {
-//    alert("Incorrect data");
-//      }else if (a + b < c || b + c < a || a + c < b) {
-//        console.log('Triangle doesn�t exist');
-//         }else if (a*a === (b*b + c*c) || b*b === (a*a + c*c) || c*c === (a*a + b*b)){
-//           console.log("Right triangle");
-// } 
 
 
 
@@ -147,28 +130,37 @@
 
     // variant 1
 
-var now = new Date();
-var hours = now.getHours();
-if ((hours >= 23) || (hours <=5 ) ){
-    alert("Доброї ночі");
-}else if ((hours > 5) && (hours < 11)){
-  alert("Доброго ранку");
-}else if ((hours > 11) && (hours < 17)){
-  alert("Доброї дня");
-}else {
-  alert("Доброї вечора");
-}
+// var now = new Date();
+// var hours = now.getHours();
+// if ((hours >= 23) || (hours <=5 ) ){
+//     alert("Доброї ночі");
+// }else if ((hours > 5) && (hours < 11)){
+//   alert("Доброго ранку");
+// }else if ((hours > 11) && (hours < 17)){
+//   alert("Доброї дня");
+// }else {
+//   alert("Доброї вечора");
+// }
 
 
     // variant 2
 var now = new Date();
-var hours = now.getHours(); 
-let message = ((hours >= 23) || (hours <=5 ) ) ? "Доброї ночі" :
-((hours > 5) && (hours < 11)) ? "Доброго ранку" :
-((hours > 11) && (hours < 17)) ? "Доброї дня" :
-"Доброї вечора";
+var hours = now.getHours();
 
-alert( message );
+switch(true){
+  case (hours >= 23 || hours <=5 ):
+    alert("Доброї ночі");
+  break;
+  case (hours > 5 && hours < 11):
+    result = ("Доброго ранку");
+  break;
+  case (hours > 11 && hours < 17):
+alert("Доброї дня");
+  break;
+  default:
+    alert("Доброї вечора");
+  break;
+}
 
 
 
