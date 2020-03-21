@@ -49,9 +49,11 @@ function randArray(k) {
 
 // Task 4
 function raiseToDegree(a,b) {
-  let res;
-  res = Math.pow(a, b);
-  console.log(res);
+  let res = 1;
+  for (i = 1; i <= b; i++) {
+  res *= a
+  }
+  return res;
 }
 
 
