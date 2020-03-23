@@ -26,6 +26,7 @@ function showProps(obj) {
 // Task 3
 
 class Worker  {
+  #experience  = 1.2;
 	constructor(fullName, dayRate, workingDays) { 
     this.fullName = fullName;
     this.dayRate = dayRate;
@@ -36,7 +37,11 @@ class Worker  {
     let salary = this.dayRate * this.workingDays;
     console.log(this.fullName + " salary " + salary);
   }
-  #experience  = 1.2;
+
+  showSalaryWorker() {
+    return this.dayRate * this.workingDays * this.#experience;
+  }
+  
   
   showSalaryWithExperience() {
     let salaryWithExp = this.dayRate * this.workingDays * this.#experience;
@@ -53,6 +58,48 @@ class Worker  {
     this.#experience = value;
   }
 }
+
+let worker1 = new Worker("John Johnson", 20, 23);
+console.log(worker1.fullName);                 
+worker1.showSalary();
+console.log("New experience: " + worker1.showExp);
+worker1.showSalaryWithExperience();
+worker1.setExp = 1.5;
+console.log("New experience: " + worker1.showExp);
+worker1.showSalaryWithExperience();
+
+let worker2 = new Worker("Tom Tomson", 48, 22);
+console.log(worker2.fullName);                 
+worker2.showSalary();
+console.log("New experience: " + worker2.showExp);
+worker2.showSalaryWithExperience();
+worker2.setExp = 1.5;
+console.log("New experience: " + worker2.showExp);
+worker2.showSalaryWithExperience();
+
+
+let worker3 = new Worker("Andy Ander", 29, 23);
+console.log(worker3.fullName);                 
+worker3.showSalary();
+console.log("New experience: " + worker3.showExp);
+worker3.showSalaryWithExperience();
+worker3.setExp = 1.5;
+console.log("New experience: " + worker3.showExp);
+worker3.showSalaryWithExperience();
+
+
+
+let salaryArray = [worker1, worker2, worker3];
+let sorted = salaryArray.sort((a, b) => {
+    return a.showSalaryWorker() - b.showSalaryWorker();
+})
+console.log(sorted);
+for (let i = 0; i < sorted.length; i++) {
+    console.log(sorted[i].fullName + ":" + sorted[i].showSalaryWorker());
+}
+
+
+
 
 
 
