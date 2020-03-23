@@ -112,32 +112,32 @@ class GeometricFigure {
 }
 
 
-class Triangle extends GeometricFigure {
-  constructor(a, h) {   
-    super ();          
+class Triangle extends GeometricFigure {
+  constructor(a, h) {   
+    super ();          
     this.a = a;
     this.h = h;
-       }
+       }
   getArea(){
     let area = (this.a * this.h) / 2;
     return area;
   }
-} 
+} 
 
-class Square extends GeometricFigure {
-  constructor(b) {            
-    super ();         
+class Square extends GeometricFigure {
+  constructor(b) {            
+    super ();         
     this.b = b;
   }
   getArea(){
     let area = this.b * this.b;
     return area;
   }
-} 
+} 
 
-class Circle extends GeometricFigure {
-  constructor(r) {
-    super ();             
+class Circle extends GeometricFigure {
+  constructor(r) {
+    super ();             
     this.r = r;
   }
   getArea(){
@@ -145,7 +145,7 @@ class Circle extends GeometricFigure {
     let area = Pi * this.r * this.r;
     return area;
   }
-} 
+} 
 
 function handleFigures(figures) {
   let area;
@@ -155,9 +155,21 @@ function handleFigures(figures) {
   let Geometric = ["Triangle", "Square", "Circle"];
   var arr = []; 
   for ( i=0; i < figures.length; i++){
-      area = figures[i];
+      if (figures[i] instanceof Triangle ) {
+      area = figures[0];
       z = area.getArea();
-      console.log("Geometric figure: " + Geometric[i] + " "  + z);
+      console.log("Geometric figure: " + Geometric[0] + " "  + z);
+      } else if(figures[i] instanceof Square) {
+      area = figures[1];
+      z = area.getArea();
+      console.log("Geometric figure: " + Geometric[1] + " "  + z);
+    }else if(figures[i] instanceof Circle) {
+      area = figures[2];
+      z = area.getArea();
+      console.log("Geometric figure: " + Geometric[2] + " "  + z);
+    } else {
+    console.log("Geometric figure: not fined");
+    }
       arr[i] = z;
   } 
   var result = arr.reduce(function(sum, current) {
