@@ -85,33 +85,73 @@ console.log(showMonthName(14)) // MonthException Incorrect month number
 
 
  // Task 5
- function showUser(id) {
-   try {
-  let obj = {};
-  if (id >= 0) {
-    obj = {id};
-    return obj;
-  } else {
-    throw new Error("ID must not be negative:");
-  }
-  }  catch (exception) {
-     console.log(exception.name  + ":" + " " + exception.message + " " + id);
-  }
+// variant 1
+
+function showUser(id) {
+  try {
+ let obj = {};
+ if (id >= 0) {
+   obj = {id};
+   return obj;
+ } else {
+   throw new Error("ID must not be negative:");
+ }
+ }  catch (exception) {
+    console.log(exception.name  + ":" + " " + exception.message + " " + id);
+ }
 }
 
 function showUsers(ids) {
-  let arr = [];
-  let z;
-   for (let i = 0; i < ids.length; i++) {
-    
-      ids.forEach(function(id, i, ids) {
-       if (ids[i] >= 0) {
-      arr[i] = {id};       
-    } else {
-    z = showUser(ids[i]) 
-    }
-  });
+ let arr = [];
+ let i2 = 0;
+ let negative;
+     
+   ids.forEach(function(id, i, ids) {
+   
+    if (ids[i] >= 0) {
+     arr[i2] = {id};   
+     i2++;         
+   } else {
+     negative = showUser(ids[i]) 
+   }
+ });
+return arr;
+}  
+
+showUsers([7, -12, 44, 22]) // Error: ID must not be negative: -12
+
+
+
+// variant 2 
+function showUser(id) {
+  try {
+ let obj = {};
+ if (id >= 0) {
+   obj = {id};
+   return obj;
+ } else {
+   throw new Error("ID must not be negative:");
+ }
+ }  catch (exception) {
+    console.log(exception.name  + ":" + " " + exception.message + " " + id);
+ }
+}
+
+function showUsers(ids) {
+ let arr = [];
+ let i2 = 0;
+ let negative;
+
+  for (let i = 0; i < ids.length; i++) {
+       
+    if (ids[i] >= 0) {
+     arr[i2] = {id:ids[i]};   
+     i2++;         
+   } else {
+     negative = showUser(ids[i]) 
+   }
+
 }return arr;
 }  
 
-showUsers([7, -12, 44, 22]) // Error: ID must not be negative: -12 
+showUsers([7, -12, 44, 22]) // Error: ID must not be negative: -12
