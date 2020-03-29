@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 6.4</title>
+</head>
+<body>
+ 
+  <!-- Variant 1 -->  
+  
+  <ul id = "list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  
+
+  <script>
+    let elem = document.querySelectorAll("#list li");  
+    alert(elem[0].innerHTML); 
+    alert(elem[4].innerHTML); 
+    alert(elem[1].innerHTML); 
+    alert(elem[3].innerHTML); 
+    alert(elem[2].innerHTML);       
+  </script>
+
+ <!-- Variant 2 -->
+
+  <!-- <ul id = "list"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ul>
+  <script>
+
+   let elements = document.querySelector("#list")
+   let first = elements.firstChild;
+   let last = elements.lastChild;
+   let second = first.nextSibling;
+   let four = last.previousSibling;
+   alert(first.innerHTML); 
+   alert(last.innerHTML);
+   alert(second.innerHTML); 
+   alert(four.innerHTML);   
+   alert(elements.childNodes[2].innerHTML); 
+  </script> -->
+
+  
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 6.5</title>
+</head>
+<body>
+ 
+
+  <h1>I'am a big header!!!</h1>
+  <div id="myDiv">
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+    <p>Third paragraph</p>
+    <p>Fourth paragraph</p>
+  </div>
+  <ul id="myList">
+    <li>Make</li>
+    <li>me</li>
+    <li>horizontal!</li>
+  </ul>
+  <span>Make me invisible, please!</span>
+
+  <script>
+    document.querySelector("h1").style.backgroundColor = "lightgreen";  
+    document.querySelector("#myDiv p").innerHTML = "<b>First paragraph</b>";
+    document.querySelectorAll("#myDiv p")[1].style.color = "red";
+    document.querySelectorAll("#myDiv p")[2].style.textDecoration = "UnderLine"
+    document.querySelectorAll("#myDiv p")[3].innerHTML = "<i>Fourth paragraph</i>";
+    document.getElementById("myList").style.listStyleType = "none";
+    document.getElementById("myList").style.display = "flex";    
+    document.querySelector("span").style.opacity = "0";
+  </script> 
+
+</body>
+</html>
