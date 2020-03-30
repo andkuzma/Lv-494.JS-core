@@ -34,22 +34,24 @@ calcRectangleArea(5, 6);
 
 // Task 3
 
-function checkAge() {
-  let age = prompt("Enter your age:", "");
-  if (age == "") {
+function checkAge() {   
+  let age = prompt("Enter your age:", "");
+  if (!age.trim()) {
     throw new Error("The field is empty! Please enter your age");
   } else if (isNaN(age)) {
     throw new Error("Ви ввели нечислове значення");
-  } else if (age < 14) {
+  } else if (age < 14 && age > 0) {
     throw new Error("Йди вчи уроки");
-  }
+  } 
+  
 } 
-try {
-      let result = checkAge();
-      console.log("Ви можете приступати до перегляду фільму");
-  } catch (exception) {
-      console.log(exception.name);
-      console.log(exception.message);
+try {
+      let result = checkAge();
+      console.log(typeof age);
+      console.log("Ви можете приступати до перегляду фільму");
+  } catch (exception) {
+      console.log(exception.name);
+      console.log(exception.message);
   }
 
 
