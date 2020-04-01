@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 7.3</title>
+</head>
+<body> 
+<div>
+  <button id="blue">Click to make the page blue.</button> 
+  <button id="pink">Click to make the page pink.</button>
+  <button id="brown">Click to make the page brown.</button>
+  <a href="#" id="myLink">Hover over to make page yellow</a>
+</div>
+
+<script>
+  function changeBackBlue() {
+    document.body.style.background = "blue";
+  };                 
+  blue.addEventListener("click", changeBackBlue); 
+
+  function changeBackPink() {
+    document.body.style.background = "pink";
+  };                 
+  pink.addEventListener("dblclick", changeBackPink); 
+
+  function changeBackBrown() {
+    document.body.style.background = "brown";
+  };   
+  function changeBackWhite() {
+    document.body.style.background = "white";
+  };               
+  brown.addEventListener("mousedown", changeBackBrown); 
+  brown.addEventListener("mouseup", changeBackWhite); 
+
+  function changeBackYellow() {
+    document.body.style.background = "yellow";
+  };
+  myLink.addEventListener("mouseover", changeBackYellow); 
+  myLink.addEventListener("mouseout", changeBackWhite); 
+
+</script>
+    
+  
+</body>
+</html>

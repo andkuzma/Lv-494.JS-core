@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 7.7</title>
+</head>
+<body>
+  
+  <select id="countryList">
+    <option value="ger" selected>Germany</option>
+    <option value="usa">USA</option>    
+    <option value="ua">Ukraine</option>
+  </select>
+
+  <select id="cityList"> 
+  </select> 
+  <div id="userChoice"></div>
+<script>
+
+var cities = {
+  ger: ["Berlin", "Stuttgart", "Nuremberg", "Cologne" ],
+  usa: ["New-York", "Washington", "Boston", "Chicago"],
+  ua: ["Kyiv", "Lviv", "Kharkiv", "Odessa"]
+};
+var country = document.getElementById("countryList");
+var city = document.querySelector("#cityList");
+window.onload = selectCountry;
+country.onchange = selectCountry;
+
+function selectCountry(ev){
+  cityList.innerHTML = "";
+  var value = this.value || "ger";
+  var newOption;
+  for(let i = 0; i < cities[value].length; i++){
+    newOption = new Option(cities[value][i],i,false,false);
+    city.add(newOption);
+  };
+}
+
+ function changeCountry(){  
+    let selectedIndex = countryList.options.selectedIndex;  
+    CountryNewChoice = countryList.children[selectedIndex].innerHTML;
+};
+
+function changeCity(){  
+    let selectedIndex = cityList.options.selectedIndex;  
+    cityNewChoice = cityList.children[selectedIndex].innerHTML;
+    window.document.getElementById("userChoice").innerHTML = CountryNewChoice + ", " + cityNewChoice;
+};
+
+countryList.addEventListener("click", changeCountry);
+cityList.addEventListener("click", changeCity);
+</script>    
+
+</body>
+</html>

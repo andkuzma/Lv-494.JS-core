@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 7.4</title>
+</head>
+<body>
+  
+  <select id="nameList">
+    <option value="peter">Peter</option>
+    <option value="john">John</option>
+    <option value="alise">Alise</option>
+    <option value="alex">Alex</option>
+    <option value="iren">Iren</option>
+  </select>
+  <button id="removeName">Choose and Delete</button>  
+
+<script>
+  
+function removeOption(){   
+  let selectedIndex = nameList.options.selectedIndex;
+  nameList.remove(selectedIndex);
+}
+
+removeName.addEventListener("click", removeOption);
+
+</script>    
+
+</body>
+</html>
