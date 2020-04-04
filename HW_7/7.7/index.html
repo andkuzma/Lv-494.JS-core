@@ -15,7 +15,10 @@
 
   <select id="cityList"> 
   </select> 
-  <div id="userChoice"></div>
+  <div> 
+  <div id="сountryChoice"></div>
+  <div id="cityChoice"></div>
+  </div>
 <script>
 
 var cities = {
@@ -41,12 +44,16 @@ function selectCountry(ev){
  function changeCountry(){  
     let selectedIndex = countryList.options.selectedIndex;  
     CountryNewChoice = countryList.children[selectedIndex].innerHTML;
+    window.document.getElementById("сountryChoice").innerHTML = CountryNewChoice + ", ";
+    сountryChoice.style.float = "left";
+    cityChoice.style.display = "none"
 };
 
 function changeCity(){  
     let selectedIndex = cityList.options.selectedIndex;  
     cityNewChoice = cityList.children[selectedIndex].innerHTML;
-    window.document.getElementById("userChoice").innerHTML = CountryNewChoice + ", " + cityNewChoice;
+    window.document.getElementById("cityChoice").innerHTML = cityNewChoice;
+    cityChoice.style.display = "inline-block"
 };
 
 countryList.addEventListener("click", changeCountry);
