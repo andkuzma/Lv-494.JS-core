@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 8</title>
+</head>
+<body>
+
+<script>
+
+// Task 8.1  
+
+function upperCase(str) {
+  var re = /^[A-Z]/;
+  let check = re.test(str);
+  if (check) {
+    console.log("String's starts with uppercase character ")
+  } else {
+    console.log("String's not starts with uppercase character ")
+  }
+}  
+upperCase('regexp');
+upperCase('RegExp');
+
+
+// Task 8.2  
+function checkEmail(str) {
+  var re = /^\S+(@gmail\.com)$/;
+  return re.test(str);
+}  
+
+
+// Task 8.3   
+let str = "cdbBdbsbz";
+var re = /d(b+)(d)/i;
+console.log(str.match(re));
+
+let str2 = "cdbBbbbBbbBdbsbz";
+console.log(str2.match(re));
+
+
+
+// Task 8.4
+let str = "Java Script";
+var re = /\S+/gi;
+let myArray = str.match(re);
+console.log(myArray[1] + ", " + myArray[0]);
+
+// Variant 2 На learn.javascript вичитав такий спосіб
+
+console.log(str.replace(/(\w+) (\w+)/i, '$2, $1')); 
+
+
+
+// Task 8.5
+function cardValidator(str) {
+  var re = /^((\d{4}-){3})(\d{4})$/;
+  return re.test(str);
+}
+
+cardValidator("9999-9999-9999-9999"); //true
+cardValidator("99-9999-9999-9999"); //false
+cardValidator("9999-9999-9999-999"); //false
+cardValidator("9999-9999-9999-99999"); //false
+cardValidator("9999-99999-9999-9999"); //false
+cardValidator("9999-9999-9999-9999-99"); //false
+
+
+
+// Task 8.6
+function checkEmail(str) {
+  var re = /^[A-Za-z0-9]+\w+\-)?\w+(@gmail\.com)$/;
+  let check = re.test(str);
+  if (check) {
+    console.log("Email is correct!")
+  } else {
+    console.log("Email is not correct!")
+  }
+ 
+}
+
+console.log(checkEmail('my_mail@gmail.com')); // Email is correct!
+console.log(checkEmail('aMfefy_m284Ail@gmail.com')); // Email is correct!
+console.log(checkEmail('#my_mail@gmail.com')); // Email is not correct!
+console.log(checkEmail('-my_mail@gmail.com')); // Email is not correct!
+console.log(checkEmail('_my_mail@gmail.com')); // Email is not correct!
+console.log(checkEmail('m-y_mail@gmail.com')); // Email is correct!
+console.log(checkEmail('my_ma-il@gmail.com')) // Email is correct!
+console.log(checkEmail('m-y_ma-il@gmail.com')) // Email is not correct!
+
+
+// Task 8.7
+
+function checkLogin(str) {
+
+}
+
+
+</script>
+    
+  
+</body>
+</html>
