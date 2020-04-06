@@ -93,8 +93,26 @@ console.log(checkEmail('m-y_ma-il@gmail.com')) // Email is not correct!
 // Task 8.7
 
 function checkLogin(str) {
+  var re = /^\D([A-Za-z0-9]+(((\d+\.\d)+?[A-Za-z0-9]+?(\d+\.\d)?)+?)?)$/;
+  let numbers = str.match(/\d+(\.\d+)?/g);
 
+  if (str.length >= 2 && str.length <= 10) {    
+  console.log(re.test(str));  
+  console.log(numbers);
+
+  } else {
+    console.log(false);
+    console.log(numbers);
+  }
+   
 }
+
+console.log(checkLogin('ee1.1ret3')); // true 1.1, 3
+console.log(checkLogin('ee1*1ret3')); // false 1, 1, 3
+console.log(checkLogin('1ee1ret3')); // false "1", "1", "3"
+console.log(checkLogin('e')) // false
+console.log(checkLogin('e1.1ret3hrtgeswgfesfes')) // false  "1.1", "3"
+console.log(checkLogin('e91.1rk1.1')) // true "91.1", "1.1"
 
 
 </script>
