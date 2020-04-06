@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 9</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body>
+
+<!----------------------------Task 1-------------------------- -->  
+
+    <!-- <a href ="https://softserve.academy/login/index.php">lala</a>
+
+    <script>
+      $("[href^='https://']").attr("target", "_blank");
+    </script> -->
+
+
+
+
+
+<!-- --------------------------Task 2-------------------------- -->
+
+    <!-- <h2 class="head">header1</h2>
+    <h2 class="head">header2 <span class="inner">inner elem1</span></h2>
+    <h2>header3</h2>
+    <h2 class="head">header4<span>inner elem2</span></h2>
+    <h2>header5</h2>
+
+    <script>        
+        $("h2.head").css("background", "green");
+        $("span.inner").css("font-size", "35px")
+    </script> -->
+
+
+
+<!-- --------------------------Task 3-------------------------- -->
+
+   <!-- <h3>header1</h3>
+   <div>text1</div>
+   <h3>header2</h3>
+   <div>text2</div>
+
+   <script>
+
+        $('h3').each(function() {
+            $(this).insertAfter($(this).next());
+        });
+
+   </script> -->
+
+
+
+<!-- --------------------------Task 4-------------------------- -->
+
+    
+    <input type="checkbox" name="option1" value="a1">Ляля 1<Br>
+    <input type="checkbox" name="option2" value="a2">Ляля 2<Br>
+    <input type="checkbox" name="option3" value="a3">Ляля 3<Br> 
+    <input type="checkbox" name="option4" value="a4">Ляля 4<Br> 
+    <input type="checkbox" name="option5" value="a5">Ляля 5<Br> 
+    <input type="checkbox" name="option6" value="a6">Ляля 6</p>
+
+
+
+    <script> 
+       
+        window.onload = function() {
+        var $el = $("input");
+        var array = [];
+        var n = 0;
+
+        for(var i=0; i < $el.length; ++i) {            
+             array.push($el[i]);
+
+             function chooseElement(){
+                var choose = 0; 
+                var dis;
+                if(this.checked) {
+                    ++n;
+                    choose = n == 3;
+                    dis = 1;
+                }
+                else {
+                    --n;
+                    choose = n == 2;
+                    dis = 0;
+                }
+                if(choose) {
+                    array.forEach(function(j) {
+                        if(!j.checked) {
+                            j.disabled = dis;
+                        }
+                    });
+                }
+            }            
+            $el[i].addEventListener('change', chooseElement)
+        }
+    };
+
+    </script>
+
+
+    
+</body>
+</html>
