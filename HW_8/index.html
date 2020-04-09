@@ -70,7 +70,7 @@ cardValidator("9999-9999-9999-9999-99"); //false
 
 // Task 8.6
 function checkEmail(str) {
-  var re = /^[A-Za-z0-9]+\w+\-)?\w+(@gmail\.com)$/;
+  var re = /^[A-Za-z0-9]+(\w+)?(\-)?\w+(@gmail\.com)$/;
   let check = re.test(str);
   if (check) {
     console.log("Email is correct!")
