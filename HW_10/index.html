@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 10</title>
+</head>
+<body>
+
+<script>
+
+//--------------------------Task 1--------------------------    
+let arr = ["Tom", "Sam", "Ray", "Bob"];
+let [x, y, , ...z] = arr;
+console.log(x); // "Tom"
+console.log(y); // "Sam"
+console.log(z); // [Bob]
+
+//--------------------------Task 2-------------------------- 
+let data = {
+   names: ["Sam", "Tom", "Ray", "Bob"],
+   ages: [20, 24, 22, 26],
+};
+let {names: [name1, name2, name3, name4], ages: [age1, age2, age3, age4]} = data;
+console.log(name2); // "Tom"
+console.log(age2); // 24
+console.log(name4); // "Bob"
+console.log(age4); // 26
+
+
+//--------------------------Task 3-------------------------- 
+
+function mul(...rest) {
+    let res = 1;
+    let arr = [];
+    let checkNumber;
+    for (let num of rest) {
+        arr.push(num);
+    }  
+
+    var re = /[0-9]/;
+    let check = re.test(arr);
+    if (check) {
+        for (var i=0; i <= arr.length; i++){         
+            if (typeof arr[i] === "number" ){        
+            res *= arr[i];  
+            checkNumber = true;
+            } 
+        }
+    } else {
+        return res = 0;
+    }
+   if(!checkNumber){
+        return res = 0;
+    } console.log( res );  
+}
+console.log(mul(1, "str", 2, 3, true)); // 6
+console.log(mul(null, "str", false, true)); // 0
+
+
+
+
+//--------------------------Task 4-------------------------- 
+let server = {
+    data: 0,
+    convertToString: function (callback) {
+        callback(() => {
+            return this.data + "";
+        });
+    }
+};
+let client = {
+    server: server,
+    result: "",
+    calc: function (data) {
+        this.server.data = data;
+        this.server.convertToString(this.notification());
+    },
+    notification: function () {
+        return (callback) => {
+            this.result = callback();
+        };
+    }
+};
+client.calc(123);
+console.log(client.result); // "123"
+console.log(typeof client.result); // "string"
+
+
+//--------------------------Task 5-------------------------- 
+
+function mapBuilder (keys, values) {
+var obj = keys.reduce((acc, n, i) => ({ ...acc, [n]: values[i] }), {});
+var map	= new Map(Object.entries(obj));
+return map
+}
+
+
+let keys = [1, 2, 3, 4];
+let values = ["div", "span", "b", "i"];
+let map = mapBuilder(keys, values);
+console.log(map.size); // 4
+console.log(map.get("2")); // "span"
+console.log(map.get("4")); // "i"
+
+
+</script>
+    
+</body>
+</html>
