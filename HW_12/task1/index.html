@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 12</title>
+</head>
+<body>
+
+    <button onclick="vote()"  id="button">Vote!</button>
+    <script>
+        function vote() {
+
+         document.getElementById('button').innerHTML = 'Loading ... '
+
+          var ajaxRequest = new XMLHttpRequest();
+    
+          ajaxRequest.open('GET', 'vote', true);
+    
+          ajaxRequest.onreadystatechange = function() {
+
+            if (ajaxRequest.readyState < 4)  {
+                document.getElementById('button').innerHTML = "Loading...";
+
+            } else if  (ajaxRequest.readyState === 4) { 
+
+                if (ajaxRequest.status == 200)  {
+                 document.getElementById('button').innerHTML = ajaxRequest.responseText; 
+                }
+            }
+
+          }
+    
+          ajaxRequest.send(null);
+    
+        }
+    
+      </script>
+   
+</body>
+</html>
+
+
