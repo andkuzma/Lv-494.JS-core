@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 12</title>
+</head>
+<body>
+
+    <button onclick="downloadBooks()"  id="button">Download books</button>
+    <ul id="authorName"></ul>
+
+    <script>
+      function downloadBooks() {
+
+        const ajaxRequest = new XMLHttpRequest();
+
+        ajaxRequest.open('GET', 'books.json', true);
+        //ajaxRequest.responseType = 'json';
+      
+        ajaxRequest.onreadystatechange = function() { 		 
+
+          if (ajaxRequest.readyState != 4) return;			 
+
+          if (ajaxRequest.status != 200) {        
+            alert('Error ' + ajaxRequest.status + ': ' + ajaxRequest.statusText);
+          } else { 
+            var jsonObj = ajaxRequest.responseText;
+            var newObj = JSON.parse(jsonObj);
+
+            for (i = 0; i < Object(newObj).length; i++) {
+            var keys = Object(newObj[i]);
+            var newElement = document.createElement('li');            
+            newElement.textContent = keys['author'];
+            authorName.appendChild(newElement);
+            } 
+
+           }
+        }
+        ajaxRequest.send();
+      }
+      </script>
+   
+</body>
+</html>
+
+
